@@ -1,5 +1,5 @@
 
-import Todos from './todos'
+import Todos from '../components/todos'
 
 const Index = () => {
     return(
