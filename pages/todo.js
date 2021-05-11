@@ -4,12 +4,12 @@ import styles from '../styles.module.css'
 export default class Todo extends React.Component{
 
     state = {
-        completed: this.props.todo.completed
+        completed: this.props.completed
     }
 
     markAsDone = () => {
-        this.setState({completed: !this.props.todo.completed}, () => {
-            this.props.handleUpdateTodo(this.props.todo.id, this.props.todo.taskName, this.state.completed);
+        this.setState({completed: !this.props.completed}, () => {
+            this.props.handleUpdateTodo(this.props.id, this.props.taskName, this.state.completed);
         })
     }
 
@@ -18,10 +18,10 @@ export default class Todo extends React.Component{
             <div className={styles.todo}>
                 <li>
                     <label>
-                        {this.props.todo.taskName}
+                        {this.props.taskName}
                     </label>
-                    <button onClick={event => this.props.handleDeleteTodo(this.props.todo.id, event)}>x</button>
-                    <input type="checkbox" defaultChecked={this.props.todo.completed} onClick={this.markAsDone} />
+                    <button onClick={event => this.props.handleDeleteTodo(this.props.id, event)}>x</button>
+                    <input type="checkbox" defaultChecked={this.props.completed} onClick={this.markAsDone} />
                 </li>
             </div>
 

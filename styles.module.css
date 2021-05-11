@@ -12,27 +12,20 @@
     padding:5px;
 }
 
-.todoForm input[type='text']{
-
-    font-family: 'Kalam', cursive;
-}
-
 .todoForm button{
 
     background-color: #8ffd00;
     border-radius: 3px;
     margin:3px;
-    font-family: 'Kalam', cursive;
 
 }
 .todoForm button:hover{
-
     background-color: #65b300;
-
+    cursor: pointer;
 }
 
 .todos{
-
+    color:white;
 }
 
 .todo{
@@ -56,6 +49,7 @@
 
 .todo button:hover{
     background-color: rgb(138, 1, 1);
+    cursor: pointer;
 }
 
 .todo input[type='checkbox'] { 

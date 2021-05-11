@@ -36,6 +36,11 @@ export default class Todos extends React.Component{
     handleAddTodo = async (id, event) => {
         event.preventDefault();
 
+        if (!this.state.newTodo.taskName) {
+            alert("Please enter a task");
+            return false;
+          }
+
         try{
             const params = {
                 "id":id,
@@ -94,7 +99,9 @@ export default class Todos extends React.Component{
         const Todos = this.state.todos.map((todo) =>
         <Todo
         key={todo.id}
-        todo={todo}
+        id={todo.id}
+        taskName={todo.taskName}
+        completed={todo.completed}
         handleDeleteTodo={this.handleDeleteTodo}
         handleUpdateTodo={this.handleUpdateTodo}
         />);
@@ -124,10 +131,9 @@ export default class Todos extends React.Component{
                         <ul>
                             {Todos}
                         </ul>
-                        <h3>Completed: {Completed.length}</h3>
+                        <h3>Completed: {Completed.length}/{this.state.todos.length}</h3>
                     </div>
                 </div>
-                
             </Fragment>
 
         )
